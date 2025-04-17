@@ -1,0 +1,15 @@
+<header
+  *ngIf="user$ | async as user"
+  class="bg-gray-800 text-white p-4 flex justify-between items-center shadow-md"
+>
+  <div class="text-xl font-semibold">My App</div>
+  <div>
+    <span class="font-medium">{{ user.firstName }} {{ user.lastName }}</span>
+  </div>
+  <button
+    (click)="logout()"
+    class="bg-zinc-700 text-white p-2 rounded-full hover:bg-zinc-900 transition duration-200"
+  >
+    Logout
+  </button>
+</header>

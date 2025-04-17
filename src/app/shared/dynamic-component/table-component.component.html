@@ -1,0 +1,26 @@
+<div class="overflow-x-auto rounded-lg shadow-lg p-8">
+  <table class="min-w-full divide-y divide-gray-200 bg-white text-sm border-1">
+    <thead class="bg-gray-100">
+      <tr>
+        <th
+          *ngFor="let col of columns"
+          class="px-4 py-2 text-left font-medium text-gray-700 uppercase tracking-wider"
+          [style.width.px]="col.width"
+        >
+          {{ col.caption }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data" class="border-b hover:bg-gray-50 transition-colors">
+        <td
+          *ngFor="let col of columns"
+          class="px-4 py-2 text-gray-700"
+          [style.width.px]="col.width"
+        >
+          {{ row[col.dataField] }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
